@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
 
 function Leads() {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function Leads() {
     orderStatus: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
@@ -32,7 +32,7 @@ function Leads() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log(formData);
   };

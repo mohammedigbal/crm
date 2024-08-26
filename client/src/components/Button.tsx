@@ -1,5 +1,4 @@
-import { ReactNode, useState } from "react";
-import Alert from "./Alert";
+import { ReactNode } from "react";
 
 interface props {
   children: ReactNode;

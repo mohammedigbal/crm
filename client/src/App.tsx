@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Leads from "./components/Leads";
 
 function App() {
