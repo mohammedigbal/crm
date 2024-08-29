@@ -1,0 +1,21 @@
+.form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-label {
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .mandatory-field {
+    border-left: 4px solid red; /* Add a red left border */
+    padding-left: 10px; /* Optional: Add padding to avoid text touching the red border */
+  }

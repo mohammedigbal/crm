@@ -1,0 +1,41 @@
+.bottom-panel {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  width: 100%;
+}
+
+.icon {
+  margin: 0 2px;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
