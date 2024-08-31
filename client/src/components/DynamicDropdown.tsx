@@ -24,13 +24,15 @@ const DynamicDropdown = ({
   const proxy = "http://localhost:4000";
   let url: string;
   if (name === "location") {
-    url = proxy + "/getLocations";
+    url = "/getLocations";
+    //url = proxy + "/getLocations";
   } else if (
     name === "leadSource" ||
     name === "orderStatus" ||
     name === "currentStatus"
   ) {
-    url = proxy + "/getConfigValues?config_type=" + field_value;
+    url = "/getConfigValues?config_type=" + field_value;
+    //url = proxy + "/getConfigValues?config_type=" + field_value;
   }
 
   useEffect(() => {
