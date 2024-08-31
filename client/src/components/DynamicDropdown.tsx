@@ -4,6 +4,8 @@ import axios from "axios";
 interface DropdownValues {
   id: number;
   name: string;
+  location_name: string;
+  config_value: string;
 }
 
 interface DropdownProps {
@@ -21,7 +23,7 @@ const DynamicDropdown = ({
 }: DropdownProps) => {
   const [options, setOptions] = useState<DropdownValues[]>([]);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
-  const proxy = "http://localhost:4000";
+  //const proxy = "http://localhost:4000";
   let url: string;
   if (name === "location") {
     url = "/getLocations";
