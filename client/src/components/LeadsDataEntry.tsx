@@ -44,7 +44,7 @@ function Leads() {
     });
   };
 
-  const handleTextBoxChange = (e) => {
+  const handleTextBoxChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
