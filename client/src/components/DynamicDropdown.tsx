@@ -23,18 +23,18 @@ const DynamicDropdown = ({
 }: DropdownProps) => {
   const [options, setOptions] = useState<DropdownValues[]>([]);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
-  //const proxy = "http://localhost:4000";
+  const apiUrl = import.meta.env.VITE_API_URL;
   let url: string;
   if (name === "location") {
-    url = "/getLocations";
-    //url = proxy + "/getLocations";
+    url = `${apiUrl}/getLocations`;
+    console.log(url);
   } else if (
     name === "leadSource" ||
     name === "orderStatus" ||
     name === "currentStatus"
   ) {
-    url = "/getConfigValues?config_type=" + field_value;
-    //url = proxy + "/getConfigValues?config_type=" + field_value;
+    url = `${apiUrl}/getConfigValues?config_type=${field_value}`;
+    console.log(url);
   }
 
   useEffect(() => {
