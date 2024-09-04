@@ -1,4 +1,3 @@
-import { FaBell, FaEnvelope, FaUser } from "react-icons/fa";
 import "./MainPage.css";
 import LeadsDataEntry from "./LeadsDataEntry";
 
@@ -37,19 +36,6 @@ const MainPage = ({ pageName }: headerDetail) => {
       <main className="content">
         <LeadsDataEntry />
       </main>
-      <footer className="footer">
-        <div className="footer-icons">
-          <div className="icon" title="Alerts and Announcements">
-            📢
-          </div>
-          <div className="icon" title="Activity Reminders">
-            🔔
-          </div>
-          <div className="icon" title="Recent Items">
-            🕒
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
