@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Leads.css";
+import "./LeadsDataEntry.css";
 import FormField from "./FormField";
 import DynamicDropdown from "./DynamicDropdown";
 
