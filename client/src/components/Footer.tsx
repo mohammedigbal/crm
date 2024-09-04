@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./BottonPanel.css";
+import "./Footer.css";
 
-const BottomPanel = () => {
+const Footer = () => {
   return (
-    <div className="bottom-panel">
-      <div className="icon-group">
+    <footer className="footer">
+      <div className="footer-icons">
         <div className="icon" title="Alerts and Announcements">
           📢
         </div>
@@ -15,8 +15,8 @@ const BottomPanel = () => {
           🕒
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
-export default BottomPanel;
+export default Footer;

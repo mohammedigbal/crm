@@ -59,8 +59,14 @@ function Leads() {
 
   return (
     <div className="middle-panel">
-      <h2>Leads</h2>
       <form onSubmit={handleSubmit}>
+        <div className="form-row">
+          <div className="form-group col-md-8">
+            <label>
+              <b>Opportunity Detail</b>
+            </label>
+          </div>
+        </div>
         <div className="form-row">
           <div className="form-group col-md-3">
             <FormField
@@ -189,7 +195,14 @@ function Leads() {
             />
           </div>
         </div>
-
+        <br></br>
+        <div className="form-row">
+          <div className="form-group col-md-8">
+            <label>
+              <b>Proposal & PO Detail</b>
+            </label>
+          </div>
+        </div>
         <div className="form-row">
           <div className="form-group col-md-3">
             <label>Proposal Ref#</label>
@@ -254,7 +267,14 @@ function Leads() {
             />
           </div>
         </div>
-
+        <br></br>
+        <div className="form-row">
+          <div className="form-group col-md-8">
+            <label>
+              <b>Remarks & Follow up Detail</b>
+            </label>
+          </div>
+        </div>
         <div className="form-row">
           <div className="form-group col-md-12">
             <label>Remarks (if any)</label>
@@ -266,9 +286,6 @@ function Leads() {
             />
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
       </form>
     </div>
   );

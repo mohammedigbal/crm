@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #282c34;
+    color: white;
+  }
+  
+  .logo img {
+    height: 50px;
+    margin-bottom: 1px;
+  }
+  
+  .company-name {
+    flex: 2;
+    text-align: center;
+  }
+  
+  .company-title {
+    font-weight: bold;
+  }
+  
+  .company-statement {
+    font-size: 0.9em;
+    color: #ccc;
+  }
+  
+  .menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .menu a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+  }

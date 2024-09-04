@@ -1,8 +1,16 @@
-.bottom-panel {
+.footer {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 10px;
-  background-color: #f0f0f0;
+  background-color: #282c34;
+  color: white;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  margin-left: auto; /* Ensures the icons are pushed to the right */
 }
 
 .icon-group {

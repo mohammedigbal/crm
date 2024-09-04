@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .header, .sub-header, .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .header {
+    background-color: #282c34;
+    color: white;
+  }
+  
+  .logo img {
+    height: 60px; /* Adjust the height as needed */
+    margin-bottom: 1px; /* Add 1px space below the image */
+  }
+  
+  .company-name {
+    flex: 2;
+    text-align: center;
+  }
+  
+  .company-title {
+    font-weight: bold;
+  }
+  
+  .company-statement {
+    font-size: 0.9em;
+    color: #ccc;
+  }
+
+  .menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .menu a {
+    margin-left: 15px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sub-header {
+    background-color: #f1f1f1;
+  }
+  
+  .page-name {
+    flex: 1;
+    text-align: left;
+    font-weight: bolder;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .footer {
+    background-color: #282c34;
+    color: white;
+    justify-content: flex-end;
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 5px;
+
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }

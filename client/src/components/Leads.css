@@ -68,11 +68,12 @@
   }
   
   .form-control {
+    height: 40px;
     width: 100%;
-    padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 15px;
   }
   
   .mandatory-field {

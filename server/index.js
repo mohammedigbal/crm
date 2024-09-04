@@ -6,6 +6,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+app.get("/", (req,res) => {
+  res.send("Hello World!!!");
+})
+
 app.get("/getLocations", async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM locations ORDER BY LOCATION_NAME');
