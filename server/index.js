@@ -1,10 +1,25 @@
-const express = require("express")
-const cors = require("cors")
-const pool = require("./database")
+import express from "express";
+import cors from "cors";
+import serverless from "serverless-http";
+import pkg from 'pg';
+const { Pool } = pkg;
 
-const app = express()
-app.use(express.json())
-app.use(cors())
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+const pool = new Pool({
+    user: "postgres",
+    password: "crmadminuser",
+    host: "localhost",
+    //host: "crm-db-instance.cncooa6u6jo0.ap-south-1.rds.amazonaws.com",
+    port: 5432,
+    database: "crm_db"
+})
+
+pool.connect()
+  .then(() => console.log('Connected to PostgreSQL'))
+  .catch(err => console.error('Connection error', err.stack));
 
 app.get("/", (req,res) => {
   res.send("Hello World!!!");
@@ -32,4 +47,8 @@ app.get("/getConfigValues", async (req, res) => {
       }
 })
 
-app.listen(4000, () => console.log("Server on localhost:4000"))
+if (process.env.DEVELOPMENT) {
+  app.listen(4000, () => console.log("Server on localhost:4000"));
+}
+
+export const handler = serverless(app);
