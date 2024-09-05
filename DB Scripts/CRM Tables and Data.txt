@@ -1,0 +1,160 @@
+CREATE TABLE partners (
+  id SERIAL PRIMARY KEY,
+  partner_name VARCHAR(255),
+  partner_contact_details TEXT
+);
+
+CREATE TABLE products (
+  id SERIAL PRIMARY KEY,
+  product_category VARCHAR(255)
+);
+
+CREATE TABLE sales_categories (
+  id SERIAL PRIMARY KEY,
+  sales_category VARCHAR(255)
+);
+
+CREATE TABLE locations (
+  id SERIAL PRIMARY KEY,
+  location_name VARCHAR(255)
+);
+
+CREATE TABLE configurations (
+  id SERIAL PRIMARY KEY,
+  config_type VARCHAR(255),
+  config_value VARCHAR(255)
+);
+
+CREATE TABLE opportunities (
+  id SERIAL PRIMARY KEY,
+  opportunity_name VARCHAR(255),
+  lead_source_id INT,
+  account_manager VARCHAR(255),
+  partner_id INT,
+  location_id INT,
+  forecast_amount DECIMAL(10, 2),
+  current_status_id INT,
+  last_follow_up_date DATE,
+  remarks TEXT,
+  proposal_ref VARCHAR(255),
+  po_received BOOLEAN,
+  partner_po_ref VARCHAR(255),
+  partner_po_date DATE,
+  actual_order_value DECIMAL(10, 2),
+  order_status_id INT,
+  product_id INT,
+  sales_category_id INT,
+  FOREIGN KEY (partner_id) REFERENCES partners(id),
+  FOREIGN KEY (location_id) REFERENCES locations(id),
+  FOREIGN KEY (product_id) REFERENCES products(id),
+  FOREIGN KEY (sales_category_id) REFERENCES sales_categories(id),
+  FOREIGN KEY (lead_source_id) REFERENCES configurations(id),
+  FOREIGN KEY (current_status_id) REFERENCES configurations(id),
+  FOREIGN KEY (order_status_id) REFERENCES configurations(id)
+);
+
+INSERT INTO configurations (config_type, config_value) VALUES
+('lead_source', 'Website'),
+('lead_source', 'Referral'),
+('lead_source', 'Email Campaign'),
+('lead_source', 'Consultant'),
+('lead_source', 'Direct Enquiry'),
+('lead_source', 'Sales Manager'),
+('lead_source', 'OEM'),
+('current_status', 'Open'),
+('current_status', 'In Progress'),
+('current_status', 'On Hold'),
+('current_status', 'Closed'),
+('order_status', 'Pending'),
+('order_status', 'Confirmed'),
+('order_status', 'Shipped');
+
+INSERT INTO locations (location_name) VALUES
+('Delhi'),
+('Noida & Bengaluru'),
+('Gurugram'),
+('Mohali'),
+('Bengaluru'),
+('J&K'),
+('Noida'),
+('Neemrana'),
+('Gujarat'),
+('Mizoram'),
+('West Bengal'),
+('Mumbai'),
+('Rajasthan'),
+('Gurugram/ Bhubaneswar & Mumbai'),
+('Hyderabad'),
+('Karnal'),
+('Gurgaon'),
+('Datia'),
+('Jaipur'),
+('Rajgarh'),
+('Chennai');
+
+INSERT INTO products (product_category) VALUES
+('Nureva Dual-HDL-300-B'),
+('Brightsign (XD235)'),
+('SDHC-64C10-1(M)'),
+('Nureva HDL310'),
+('Additional Warranty 4yrs'),
+('Nureva HDL410'),
+('Brightsign (XT1144 + 64GB SDC)'),
+('Brightsign (HD1025 + 64GB SDC)'),
+('Brightsign (LS445 + 64GB SDC)'),
+('Sennheiser (EW-D 835-S SET)'),
+('Sennheiser (EW-D ME4 SET)'),
+('Xilica (Solaro QR1)'),
+('Xilica (Solaro XC-SML)'),
+('Xilica (Solaro XC-SLO)'),
+('Xilica (Solaro XC-SUB)'),
+('Xilica (Hear Clear AEC)'),
+('Brightsign (XC2055 + 64GB SDC)'),
+('Brightsign (XD1035 + 64GB SDC)'),
+('Brightsign (LS425 + 64GB SDC)'),
+('Wyrestorm (CAM-210-PTZ)'),
+('NVICTTA (CM-3012-4KU3)'),
+('Brightsign (XT1145 + 64GB SDC)'),
+('Nvictta (Retractable cable manager)'),
+('ALLSEE (POS15W4B-T)'),
+('Brightsign (XC4055 + 250GB SSD)'),
+('Brightsign (XC2055 + 250GB SSD)'),
+('Additional Warranty 2yrs'),
+('Brightsign (XT1144 + Wifi Module + 64GB SDC)'),
+('Kennexpro (Super Sim Premium High-Speed HDMI - 3 feet)'),
+('Simone Cable (23 Line Items)'),
+('Brightsign (XT245 + 64GB SDC)'),
+('AKG (PERCEPTION WIRELESS 45 VOCAL SET)'),
+('AKG (PERCEPTION WIRELESS 45 PRES SET)'),
+('AKG (WMS40MINI VOC-SET)'),
+('AKG (WMS420 PRESENTER SET)'),
+('AKG (WMS420 VOCAL SET)'),
+('AKG (WMS470 PRES SET)'),
+('AKG (DMS800 D7 VOCAL SET)'),
+('Audac (EPA104)'),
+('Brightsign (HD225 + 64GB SDC)'),
+('Nureva HDL300'),
+('Multibrackets - 7350073732616'),
+('Xilica - Solaro FR1-D'),
+('Xilica - Solaro XC-SML'),
+('Xilica - Solaro XC-SLO'),
+('Xilica - Solaro XC-SUB'),
+('Xilica - HearClear AEC'),
+('Audac - XENO6/B'),
+('Audac - SMA500'),
+('Wyrestorm - MX-0404-SCL'),
+('Sennheiser - TCC2'),
+('Sennheiser - SL CM SK'),
+('Brightsign (XT1144 + 250GB SSD)'),
+('Brightsign - BSNPASS-12'),
+('AllSEE - (TAO55H)'),
+('SSD-250GB-PCIe-NVMe M.2'),
+('Brightsign - SVC-SSD Install'),
+('Additional Warranty 1yr'),
+('Multibrackets - 7350022734012'),
+('Multibrackets - 7350105216572'),
+('Brightsign (XT1144 + 64GB SDC + WD104 + Wifi Installation Charges)'),
+('Brightsign Network Enterprise Edition'),
+('BSNPASS-12'),
+('AOTO - CVES1.8-600x337.5mm'),
+('AOTO - CVES2.5-600x337.5mm');
