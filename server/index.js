@@ -6,7 +6,8 @@ const { Pool } = pkg;
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+const url = 'https://main.d31ibbm4im0klm.amplifyapp.com';
+app.use(cors({ origin: url }));
 
 const pool = new Pool({
     user: "postgres",
